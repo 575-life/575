@@ -24,8 +24,9 @@ header { text-align: center; margin-bottom: 7rem; }
 .links a:hover, #blog-title a:hover { color: var(--muted); }
 
 /* haiku */
-article { margin-bottom: 3.25rem; }
-article::after { content: ""; display: block; width: 1.75rem; height: 1px; background: var(--rule); margin-top: 3.25rem; }
+/* each haiku is its own block, centered on the page; lines stay left-aligned */
+article { width: fit-content; max-width: 100%; margin: 0 auto 3.25rem; }
+article::after { content: ""; display: block; width: 1.75rem; height: 1px; background: var(--rule); margin: 3.25rem auto 0; }
 article:last-of-type::after, #post article::after { display: none; }
 .e-content p { white-space: pre-line; font-size: 1.3rem; line-height: 1.75; }
 .e-content img { display: block; max-width: 100%; margin: 1rem auto; }
