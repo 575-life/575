@@ -10,8 +10,9 @@
 <body id="{% if page.layout == 'post' %}post{% else %}collection{% endif %}">
   <header>
     <h1 id="blog-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
-    {% if page.layout != 'post' and site.description != '' %}
-    <div class="description">{{ site.description | markdownify }}</div>
+    {% if page.layout != 'post' %}
+    {% if site.description != '' %}<p class="description">{{ site.description }}</p>{% endif %}
+    {% if site.header_links.size > 0 %}<p class="links">{% for l in site.header_links %}<a href="{{ l.url }}">{{ l.text }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</p>{% endif %}
     {% endif %}
   </header>
   <main>
