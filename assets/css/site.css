@@ -1,0 +1,31 @@
+@import url('https://api.fontshare.com/v2/css?f[]=montserrat@100,300&f[]=sentient@300&display=swap');
+
+* { font-family: 'Sentient', serif; box-sizing: border-box; }
+html { font-size: 16px; }
+body { max-width: 550px; margin: 0 auto; padding: 3em 1.25em 6em; color: #111; background: #fff; }
+
+header { text-align: center; margin-bottom: 5em; }
+#blog-title { margin: 0; font-weight: 300; }
+#blog-title a { font-family: 'Montserrat', sans-serif; font-weight: 300; font-size: 1.7em; color: #444; text-decoration: none; padding: 4px 8px; }
+#post #blog-title a { font-size: 1.2em; }
+.description, .description * { font-family: 'Montserrat', sans-serif; font-weight: 300; color: #888; line-height: 1.1em; }
+.description p { margin: .35em 0; white-space: pre-line; }
+
+a { font-family: 'Montserrat', sans-serif; color: #444; }
+a:hover { color: #888; }
+
+/* write.as keeps single line breaks; keep them here too */
+article .e-content p { white-space: pre-line; line-height: 1.9em; font-size: 1.3em; margin: 0 0 .6em; }
+#collection article { margin-bottom: 180px; }
+.permalink { font-size: .85em; color: #aaa; text-decoration: none; }
+img { display: block; margin: 0 auto; max-width: 100%; }
+
+#paging { display: flex; justify-content: space-between; font-size: 2em; }
+#paging a { text-decoration: none; }
+#paging a[title="Older"]:only-child { margin-left: auto; }
+
+@media (prefers-color-scheme: dark) {
+  body { color: #eee; background: #111; }
+  a, #blog-title a { color: #ccc; }
+  a:hover { color: #888; }
+}

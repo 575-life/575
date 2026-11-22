@@ -1,0 +1,15 @@
+---
+layout: default
+---
+{% for post in paginator.posts %}
+<article class="h-entry">
+  <div class="e-content">{{ post.content }}</div>
+  <a class="permalink" href="{{ post.url | relative_url }}">{{ post.date | date: "%B %-d, %Y" }}</a>
+</article>
+{% endfor %}
+{% if paginator.total_pages > 1 %}
+<nav id="paging">
+  {% if paginator.previous_page %}<a href="{{ paginator.previous_page_path | relative_url }}" title="Newer">&#8672;</a>{% endif %}
+  {% if paginator.next_page %}<a href="{{ paginator.next_page_path | relative_url }}" title="Older">&#8674;</a>{% endif %}
+</nav>
+{% endif %}

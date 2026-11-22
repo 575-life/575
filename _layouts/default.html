@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  {% feed_meta %}
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body id="{% if page.layout == 'post' %}post{% else %}collection{% endif %}">
+  <header>
+    <h1 id="blog-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+    {% if page.layout != 'post' and site.description != '' %}
+    <div class="description">{{ site.description | markdownify }}</div>
+    {% endif %}
+  </header>
+  <main>
+  {{ content }}
+  </main>
+</body>
+</html>
